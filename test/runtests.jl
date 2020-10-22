@@ -38,6 +38,12 @@ using Test
 
     rootnc, conv, iter  = NewtonsMethod.newtonroot(test_nc, 1.0)
     @test rootnc==nothing
-
+   
+    x0 = BigFloat(0.79)
+    root1, conv, iter  = NewtonsMethod.newtonroot(testf, x0)
+    root2, conv, iter  = NewtonsMethod.newtonroot(testf1, x0)
+    
+    @test abs(root1 - 1.0)<1e-6
+    @test abs(root2 - 0.0)<1e-6
     
 end
