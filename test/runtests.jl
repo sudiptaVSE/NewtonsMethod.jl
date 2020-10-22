@@ -2,8 +2,8 @@ using NewtonsMethod
 using Test
 
 @testset "NewtonsMethod.jl" begin
-   testf(x) = (x-1)^4
-    testf_prime(x) = 4*(x-1)^3
+    testf(x) = (x-1)^2
+    testf_prime(x) = 2*(x-1)
     testf1(x) = exp(3*x)-1
     testf1_prime(x) = 3*exp(3*x)
     
