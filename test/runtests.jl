@@ -10,7 +10,7 @@ using Test
     #test for functions with derivative
 
     root1, conv, iter  = NewtonsMethod.newtonroot(testf,testf_prime, 0.0)
-    root2, conv, iter  = NewtonsMethod.newtonroot(testf1,testf1_prime, 0.5)
+    root2, conv, iter  = NewtonsMethod.newtonroot(testf1,testf1_prime, 1.0)
     
     @test abs(root1-1.0)<1e-6
     @test abs(root2 - 0.0)<1e-6
@@ -18,7 +18,7 @@ using Test
     #do the same for functions without derivative
 
     root1, conv, iter  = NewtonsMethod.newtonroot(testf, 0.0)
-    root2, conv, iter  = NewtonsMethod.newtonroot(testf1, 0.5)
+    root2, conv, iter  = NewtonsMethod.newtonroot(testf1, 1.0)
     
     @test abs(root1-1.0)<1e-6
     @test abs(root2 - 0.0)<1e-6
