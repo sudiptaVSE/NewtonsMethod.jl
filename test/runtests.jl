@@ -24,15 +24,15 @@ using Test
     @test abs(root2 - 0.0) < 1e-6
     
 
-    #check maxiter works
-    #root1, conv, iter  = NewtonsMethod.newtonroot(testfn,testfn_prime,x_0=0.5,  maxiter = 3)
+    #Test if maxiter works
+    root1, conv, iter  = NewtonsMethod.newtonroot(testfn,testfn_prime,x_0=0.0,  maxiter = 5)
     # if the function converged, return number of iteration, else return nothing 
-    #@test iter == nothing ||iter <= 3
-    #check for tolerance, increasing it to 1e-8
-    #root1, conv, iter  = NewtonsMethod.newtonroot(testfn,testfn_prime,x_0=0.5,  tol = 1e-8)
-    #@test abs(root1-1.0)<1e-7
+    @test iter == nothing ||iter <= 5
+    #Test different tolerance, increasing it to 1e-10
+    root1, conv, iter  = NewtonsMethod.newtonroot(testfn,testfn_prime,x_0=0.0,  tol = 1e-10)
+    @test abs(root1-1.0)<1e-7
     
-    #check lack iof convergence
+    #Test lack of convergence
     
     test_nc(x) = x^2+1
 
