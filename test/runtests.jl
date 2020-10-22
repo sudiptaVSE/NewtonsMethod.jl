@@ -9,7 +9,7 @@ using Test
     
     #test for functions with derivative
 
-    root1, conv, iter  = NewtonsMethod.newtonroot(testft, estf_prime, 0.0)
+    root1, conv, iter  = NewtonsMethod.newtonroot(testf, testf_prime, 0.0)
     root2, conv, iter  = NewtonsMethod.newtonroot(testf1, testf1_prime, 1.0)
     
     @test abs(root1 - 1.0)<1e-6
