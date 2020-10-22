@@ -3,7 +3,7 @@ module NewtonsMethod
 using LinearAlgebra, ForwardDiff
 
 
-function newtonroot(f::Function, f_prime::Function, x_0::Real, tol = 1E-7, maxiter = 1000)
+function newtonroot(f, f_prime, x_0::Real, tol = 1E-7, maxiter = 1000)
     x_old=x_0
     normdiff=Inf
     iter=1
@@ -30,7 +30,7 @@ function newtonroot(f::Function, f_prime::Function, x_0::Real, tol = 1E-7, maxit
 end
     
 
-function newtonroot(f::Function, x_0::Real, tol = 1E-7, maxiter = 1000)
+function newtonroot(f, x_0, tol = 1E-7, maxiter = 1000)
     #find derivate of f
     
     x_old=x_0
