@@ -39,18 +39,4 @@ using Test, Polynomials
     root_nc, conv, iter  = NewtonsMethod.newtonroot(test_nc, 1.0)
     @test root_nc==nothing
 
-    #check for the polynomials roots
-    
-    p_1 = Polynomial([2, -5, 2])
-    p_2 = Polynomial(rand(4))
-    
-    root1, conv, iter  = NewtonsMethod.newtonroot(p_1, 1.0)
-    root2, conv, iter  = NewtonsMethod.newtonroot(p_2, 1.0)
-    
-    @test minimum(abs.(roots(p_1).-root1))<=1e-6
-    @test minimum(abs.(roots(p_2).-root2))<=1e-6
-    
-
-
-
-end
+   end
