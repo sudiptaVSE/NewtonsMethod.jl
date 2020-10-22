@@ -1,5 +1,5 @@
 using NewtonsMethod
-using Test
+using Test, Polynomials
 
 @testset "NewtonsMethod.jl" begin
     testf(x) = (x-1)^2
